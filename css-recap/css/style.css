@@ -1,0 +1,106 @@
+/* Universal selector */
+*{
+    margin: 0px;
+    font-family: Arial;
+}
+.heading-2{
+    color: red;
+    background-color: aqua;
+}
+/* a{
+    text-decoration: none;
+} */
+
+.box{
+    /* border-style: solid;
+    border-color: red;
+    border-width: 10px; */
+    /* border: 2px solid red; */
+    /* border-bottom: 2px dashed green;
+    border-top: 2px dashed red;
+    border-left: 2px dashed black;
+    border-right: 2px dashed blue; */
+    /* margin: 100px;   */
+    /* padding: 20px; */
+    /* margin-top: 100px;
+    margin-bottom: 50px; */
+    /* margin:  20px 30px 10px 100px;  */
+    /*top right bottom left*/
+    /* margin: 20px 100px; */
+    /* Top-botom left-right */
+}
+.btn{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius:5px;
+    display: inline-block;
+}
+.btn:hover{
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+.intro{
+    color: red;
+    text-decoration: underline;
+}
+.intro1{
+    color: blue;
+}
+.h1{
+    border: 2px solid red;
+    margin: 10px;
+    padding: 20px;
+    width: 25%;
+    display: inline;
+}
+.lbl{
+    border: 2px solid yellow;
+    margin: 10px;
+    padding: 20px;
+    width: 25%;
+    /* display: block; */
+    /* display: none; */
+}
+
+.box{
+    border: 1px solid red;
+    height: 500px;
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: yellow;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    height: 100px;
+    width: 100px;
+    /* padding: ; */
+    /* display: inline; */
+}
+
+.navbar{
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar a{ /* descendent selector*/
+    color: white;
+    text-decoration: none;
+}
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+}
+.navbar ul li{
+    padding: 5px 10px;
+}
