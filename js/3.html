@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="canvas"></div>
+
+    <ul id="tech">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+    </ul>
+    
+
+    <script>
+        // let foods = ['tea', 'coffee', 'milk', 'water']
+
+        // let htmlStr = "<ul>"
+        // for(let i=0; i<foods.length; i++){
+        //     htmlStr += "<li>"+foods[i]+"</li>";
+        // }
+        // htmlStr += "</ul>"
+        // console.log(htmlStr);
+        // document.getElementById("canvas").innerHTML = htmlStr
+
+        let newLi = document.createElement('li')
+        newLi.innerHTML = "AJAX"
+        console.log(newLi);
+        document.getElementById("tech").appendChild(newLi)
+    </script>
+</body>
+</html>

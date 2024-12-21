@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            border: 1px solid black;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="buttons"></div>
+
+    <script>
+
+        let colors = ['red', 'green', 'blue', 'yellow', 'pink']
+        let btnStr = "";
+        for(let i=0; i<colors.length; i++){
+            btnStr+="<button onclick=changeColor('"+colors[i]+"')>"+colors[i]+"</button>"
+        }
+        console.log(btnStr);
+        document.getElementById("buttons").innerHTML = btnStr
+
+        function changeColor(colorName){
+            document.getElementById("box").style.backgroundColor = colorName
+        }
+        
+    </script>
+</body>
+</html>
