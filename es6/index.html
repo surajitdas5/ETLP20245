@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="clock"></h1>
+
+    <script>
+        // setInterval(function(){
+        //     console.log("Hello ");
+        // }, 1000)
+        function displayTime(){
+            let date = new Date();
+            console.log(date);
+            console.log(date.getHours());
+            console.log(date.getMinutes());
+            console.log(date.getSeconds());
+            let h = date.getHours()
+            let m = date.getMinutes()
+            let s = date.getSeconds()
+            // let timeStr = h+"H : "+m+"M : "+s+"S"
+            let timeStr = `${h}H : ${m}M : ${s}S`
+            document.getElementById("clock").innerHTML = timeStr
+        }
+        setInterval(displayTime, 1000)
+    </script>
+</body>
+</html>
