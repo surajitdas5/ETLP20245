@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add A Product</h1>
+    <form method="post" onsubmit="addProduct(event)">
+        <label>Product Name</label><br>
+        <input type="text" id="pname" required><br><br>
+        <label>Product Price</label><br>
+        <input type="text" id="pprice" required><br><br>
+        <label>Product Image</label><br>
+        <input type="text" id="pimage" required><br><br>
+        <input type="submit" value="Add">
+    </form>
+    <p id="msg"></p>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function addProduct(e){
+            try {
+                e.preventDefault()
+                document.getElementById("msg").innerHTML = ""
+
+                let name = document.getElementById("pname").value
+                let price = document.getElementById("pprice").value
+                let image = document.getElementById("pimage").value
+                console.log(name, price, image);
+
+                let url = "http://localhost:3000/products"
+                let res = await axios.post(url, {
+                    "name": name,
+                    "price": price,
+                    "iamge": image
+                })
+                console.log(res);
+                if(res.status == 201){
+                    document.getElementById("msg").innerHTML = "Product Added"
+                    document.getElementById("pname").value = ""
+                    document.getElementById("pprice").value = ""
+                    document.getElementById("pimage").value = ""
+                }
+            } catch (error) {
+                console.log(error);
+                document.getElementById("msg").innerHTML = "Error"
+            }
+            
+        }
+    </script>
+</body>
+</html>

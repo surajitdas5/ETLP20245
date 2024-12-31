@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .product{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        .product img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        async function getData(){
+            let data = await axios.get("https://fakestoreapi.com/products")
+            console.log(data.data);
+            let products = data.data
+            let htmlStr = ``;
+            products.forEach( product => {
+                htmlStr += `
+                    <div class='product'>
+                        <img src="${product.image}" >
+                        <p>${product.title}</p>
+                    </div>
+                `
+            })
+            document.getElementById("container").innerHTML=htmlStr
+        }
+        getData()
+    </script>
+</body>
+</html>

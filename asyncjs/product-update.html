@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update A Product</h1>
+    <form method="post" onsubmit="updateProduct(event)">
+        <label>Product Name</label><br>
+        <input type="text" id="pname" required><br><br>
+        <label>Product Price</label><br>
+        <input type="text" id="pprice" required><br><br>
+        <label>Product Image</label><br>
+        <input type="text" id="pimage" required><br><br>
+        <input type="submit" value="Update">
+    </form>
+    <p id="msg"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        let urlPrams = new URLSearchParams(window.location.search)
+        let id = urlPrams.get("pid")
+        console.log(id);
+        let url = "http://localhost:3000/products/"+id
+
+        async function getProduct() {
+            let res = await axios.get(url)
+            // console.log(res);
+            
+            let product = res.data
+            console.log(product);
+
+            document.getElementById("pname").value = product.name
+            document.getElementById("pprice").value = product.price
+            document.getElementById("pimage").value = product.iamge
+        }
+        getProduct()
+
+        async function updateProduct(e){
+            try {
+                e.preventDefault()
+                document.getElementById("msg").innerHTML = ""
+
+                let name = document.getElementById("pname").value
+                let price = document.getElementById("pprice").value
+                let image = document.getElementById("pimage").value
+                console.log(name, price, image);
+
+                let res = await axios.put(url, {
+                    "name": name,
+                    "price": price,
+                    "iamge": image
+                })
+                console.log(res);
+                if(res.status == 200){
+                    // document.getElementById("msg").innerHTML = "Product Updated"
+                    // document.getElementById("pname").value = ""
+                    // document.getElementById("pprice").value = ""
+                    // document.getElementById("pimage").value = ""
+                    alert("Product Updated")
+                    window.location ="product-display.html"
+                }
+            } catch (error) {
+                console.log(error);
+                document.getElementById("msg").innerHTML = "Error in Updation"
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

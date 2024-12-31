@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "name": "Dell Laptop",
+      "price": "1",
+      "iamge": "https://images.jdmagicbox.com/quickquotes/images_main/dell-2-in-1-laptops-15-03-2022-095-271077723-vy24fz0w.jpg",
+      "id": "57b3"
+    },
+    {
+      "name": "Vivo Mobile",
+      "price": "10000",
+      "iamge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm6U1Yban7BKCpU4C2dFomll1HO-W_ieZQcw&s",
+      "id": "1d70"
+    },
+    {
+      "name": "Boat EarBaud",
+      "price": "1200",
+      "iamge": "https://m.media-amazon.com/images/I/61RBK+L3CKL.jpg",
+      "id": "37b0"
+    }
+  ]
+}
